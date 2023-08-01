@@ -10,7 +10,7 @@ namespace StiToStix
         private static WindowsDriver<WindowsElement>? _winDriver;
         public string stiDir = @"C:\Users\brein\Documents\Deltares\sti";
         //public string stixDir = @"C:\Users\brein\Documents\Deltares\stix";
-        public string dstabExe = "C:\\Program Files (x86)\\Deltares\\D-GEO Suite\\D-Stability 2022.01.2\\bin\\D-Stability.exe";
+        public string dstabExe = "C:\\Program Files (x86)\\Deltares\\D-GEO Suite\\D-Stability 2023.01\\bin\\D-Stability.exe";
 
         public void execute(string filePath) {
             var newFileName = filePath + "x";
@@ -26,7 +26,7 @@ namespace StiToStix
                 // Close the start screen and go to the import sti button
                 _winDriver.Keyboard.PressKey(Keys.Escape);
                 _winDriver.FindElementByAccessibilityId("FileTab").Click();
-                _winDriver.FindElementByAccessibilityId("ImportStiBackstageButton").Click();
+                _winDriver.FindElementByAccessibilityId("ImportStiButton").Click();
 
                 Thread.Sleep(1000);
 
@@ -38,7 +38,7 @@ namespace StiToStix
 
                 // Open the save menu
                 _winDriver.FindElementByAccessibilityId("FileTab").Click();
-                _winDriver.FindElementByAccessibilityId("SaveBackstageButton").Click();
+                _winDriver.FindElementByAccessibilityId("SaveAsButton").Click();
 
                 Thread.Sleep(1000);
 
